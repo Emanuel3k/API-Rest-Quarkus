@@ -16,4 +16,10 @@ class ProductController {
         return  products
     }
 
+    @POST
+    fun postProduct(product: Product) : String {
+        products.add(product)
+        return "Product registered successfully"
+    }
+
 }
