@@ -2,6 +2,7 @@ package br.com.emanuel3k.controller
 
 
 import br.com.emanuel3k.model.Product
+import jakarta.ws.rs.DELETE
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.POST
 import jakarta.ws.rs.PUT
@@ -38,6 +39,16 @@ class ProductController {
             }
 
         return "Product updated successfully"
+    }
+
+    @DELETE
+    @Path("/{id}")
+    fun deleteProduct(@PathParam("id") id: Long): String {
+        products.removeIf { p ->
+            p.id == id
+        }
+
+        return "Product remove successfully"
     }
 
 }
