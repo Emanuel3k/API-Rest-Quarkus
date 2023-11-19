@@ -8,7 +8,7 @@ data class Product (
     @Any
     val id: Long,
     @Any
-    val name: String,
+    var name: String,
     @Any
-    val price: Double
+    var price: Double
 )
